@@ -15,14 +15,19 @@ namespace Cameron_Edwards_Wordguess
             args = new List<string>();
         }
 
-        public void setType(string t)
+        public static Message EmptyMessage()
         {
-            type = t;
+            return new Message();
         }
 
         public void addArg(string a)
         {
             args.Add(a);
+        }
+
+        public void setType(string t)
+        {
+            type = t;
         }
 
         public string getType()
@@ -32,7 +37,14 @@ namespace Cameron_Edwards_Wordguess
 
         public string getArg(int i)
         {
+            if (i < 0 || i >= args.Count)
+                return string.Empty;
             return args[i];
+        }
+
+        public bool isType(string type)
+        {
+            return getType() == type;
         }
     }
 }

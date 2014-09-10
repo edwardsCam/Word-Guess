@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Cameron_Edwards_Wordguess
 {
@@ -14,7 +12,7 @@ namespace Cameron_Edwards_Wordguess
 
             string[] colonSplit = input.Split(':');
             if (colonSplit.Length == 1)
-                return null; //no colon in message
+                return Message.EmptyMessage(); //no colon in message
             ret.setType(colonSplit[0]);
 
             string[] commaSplit = colonSplit[1].Split(',');

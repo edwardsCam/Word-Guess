@@ -44,6 +44,7 @@
             this.but_hint = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_score = new System.Windows.Forms.TextBox();
+            this.but_quit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lab_ip
@@ -101,13 +102,14 @@
             // 
             // but_new
             // 
+            this.but_new.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.but_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.but_new.Location = new System.Drawing.Point(175, 13);
             this.but_new.Name = "but_new";
             this.but_new.Size = new System.Drawing.Size(97, 97);
             this.but_new.TabIndex = 6;
             this.but_new.Text = "New Game";
-            this.but_new.UseVisualStyleBackColor = true;
+            this.but_new.UseVisualStyleBackColor = false;
             this.but_new.Click += new System.EventHandler(this.but_new_Click);
             // 
             // txt_misc
@@ -117,7 +119,7 @@
             this.txt_misc.Location = new System.Drawing.Point(13, 139);
             this.txt_misc.Name = "txt_misc";
             this.txt_misc.ReadOnly = true;
-            this.txt_misc.Size = new System.Drawing.Size(256, 20);
+            this.txt_misc.Size = new System.Drawing.Size(312, 20);
             this.txt_misc.TabIndex = 7;
             this.txt_misc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -129,7 +131,7 @@
             this.txt_def.Multiline = true;
             this.txt_def.Name = "txt_def";
             this.txt_def.ReadOnly = true;
-            this.txt_def.Size = new System.Drawing.Size(259, 20);
+            this.txt_def.Size = new System.Drawing.Size(315, 20);
             this.txt_def.TabIndex = 8;
             // 
             // txt_hint
@@ -160,48 +162,64 @@
             // 
             // but_guess
             // 
+            this.but_guess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.but_guess.Location = new System.Drawing.Point(175, 191);
             this.but_guess.Name = "but_guess";
             this.but_guess.Size = new System.Drawing.Size(53, 63);
             this.but_guess.TabIndex = 12;
             this.but_guess.Text = "Guess";
-            this.but_guess.UseVisualStyleBackColor = true;
+            this.but_guess.UseVisualStyleBackColor = false;
             this.but_guess.Click += new System.EventHandler(this.but_guess_Click);
             // 
             // but_hint
             // 
-            this.but_hint.Location = new System.Drawing.Point(235, 234);
+            this.but_hint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.but_hint.Location = new System.Drawing.Point(235, 191);
             this.but_hint.Name = "but_hint";
-            this.but_hint.Size = new System.Drawing.Size(37, 20);
+            this.but_hint.Size = new System.Drawing.Size(37, 63);
             this.but_hint.TabIndex = 13;
             this.but_hint.Text = "Hint";
-            this.but_hint.UseVisualStyleBackColor = true;
+            this.but_hint.UseVisualStyleBackColor = false;
             this.but_hint.Click += new System.EventHandler(this.but_hint_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 192);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(276, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Score:";
             // 
             // txt_score
             // 
             this.txt_score.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_score.Location = new System.Drawing.Point(235, 205);
+            this.txt_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_score.Location = new System.Drawing.Point(280, 36);
             this.txt_score.MaxLength = 5;
             this.txt_score.Name = "txt_score";
             this.txt_score.ReadOnly = true;
-            this.txt_score.Size = new System.Drawing.Size(38, 20);
+            this.txt_score.Size = new System.Drawing.Size(54, 24);
             this.txt_score.TabIndex = 15;
+            // 
+            // but_quit
+            // 
+            this.but_quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.but_quit.Location = new System.Drawing.Point(279, 234);
+            this.but_quit.Name = "but_quit";
+            this.but_quit.Size = new System.Drawing.Size(55, 20);
+            this.but_quit.TabIndex = 16;
+            this.but_quit.Text = "Quit";
+            this.but_quit.UseVisualStyleBackColor = false;
+            this.but_quit.Click += new System.EventHandler(this.but_quit_Click);
             // 
             // MainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(337, 262);
+            this.Controls.Add(this.but_quit);
             this.Controls.Add(this.txt_score);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.but_hint);
@@ -243,6 +261,7 @@
         private System.Windows.Forms.Button but_hint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_score;
+        private System.Windows.Forms.Button but_quit;
     }
 }
 

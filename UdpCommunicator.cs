@@ -48,7 +48,7 @@ namespace Cameron_Edwards_Wordguess
             }
             catch (Exception)
             {
-                return null;
+                return Message.EmptyMessage();
             }
         }
 
@@ -56,7 +56,7 @@ namespace Cameron_Edwards_Wordguess
         {
             if (receivedMsgs.Count > 0)
                 return receivedMsgs[receivedMsgs.Count - 1];
-            return null;
+            return Message.EmptyMessage();
         }
     }
 }

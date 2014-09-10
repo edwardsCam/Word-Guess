@@ -28,13 +28,12 @@ namespace Cameron_Edwards_Wordguess
         {
             socket.send(startString());
             Message response = socket.receive();
-            if (response != null)
-                id = response.getArg(0);
+            id = response.getArg(0);
         }
 
         public Message askForHint()
         {
-            if (id != null)
+            if (!string.IsNullOrEmpty(id)) //ensure the game is active
             {
                 string message = "gethint:" + id;
                 socket.send(message);
@@ -43,25 +42,33 @@ namespace Cameron_Edwards_Wordguess
                 if (response.getArg(0) == id)
                     return response;
             }
-            return null;
+            return Message.EmptyMessage();
         }
 
         public Message sendGuess(string guess)
         {
-            if (id != null)
+            if (!string.IsNullOrEmpty(id))
             {
                 string message = "guess:" + id + "," + guess;
                 socket.send(message);
                 Message response = socket.receive();
-                if (response != null && response.getArg(0) == id)
+                if (response.getArg(0) == id)
                     return response;
             }
-            return null;
+            return Message.EmptyMessage();
         }
 
         public Message getLatestResponse()
         {
             return socket.getLatestResponse();
+        }
+
+        public Message sendExit()
+        {
+            string message = "exit:" + id;
+            socket.send(message);
+
+            return socket.receive();
         }
 
         public static string startString()
