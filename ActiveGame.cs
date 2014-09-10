@@ -47,7 +47,7 @@ namespace Cameron_Edwards_Wordguess
 
         public Message sendGuess(string guess)
         {
-            if (!string.IsNullOrEmpty(id))
+            if (!string.IsNullOrEmpty(id)) //ensure the game is active
             {
                 string message = "guess:" + id + "," + guess;
                 socket.send(message);
@@ -63,12 +63,10 @@ namespace Cameron_Edwards_Wordguess
             return socket.getLatestResponse();
         }
 
-        public Message sendExit()
+        public void sendExit()
         {
             string message = "exit:" + id;
             socket.send(message);
-
-            return socket.receive();
         }
 
         public static string startString()

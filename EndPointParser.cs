@@ -9,18 +9,6 @@ namespace Cameron_Edwards_Wordguess
 {
     public static class EndPointParser
     {
-        public static IPEndPoint Parse(string hostnameAndPort)
-        {
-            IPEndPoint result = null;
-            if (!string.IsNullOrWhiteSpace(hostnameAndPort))
-            {
-                string[] tmp = hostnameAndPort.Split(':');
-                if (tmp.Length == 2 && !string.IsNullOrWhiteSpace(tmp[0]) && !string.IsNullOrWhiteSpace(tmp[1]))
-                    result = new IPEndPoint(ParseAddress(tmp[0]), ParsePort(tmp[1]));
-            }
-            return result;
-        }
-
         public static IPAddress ParseAddress(string hostname)
         {
             IPAddress result = null;

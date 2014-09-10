@@ -5,6 +5,10 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
+/*
+ * UdpCommunicator acts as both sender and receiver on a specific port
+ * */
+
 namespace Cameron_Edwards_Wordguess
 {
     public class UdpCommunicator
@@ -15,8 +19,8 @@ namespace Cameron_Edwards_Wordguess
 
         public UdpCommunicator()
         {
-            IPEndPoint ep = new IPEndPoint(IPAddress.Any, 0);
-            client = new UdpClient(ep);
+            IPEndPoint localEP = new IPEndPoint(IPAddress.Any, 0);
+            client = new UdpClient(localEP);
             sentMsgs = new List<Message>();
             receivedMsgs = new List<Message>();
         }

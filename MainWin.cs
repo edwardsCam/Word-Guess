@@ -38,11 +38,11 @@ namespace Cameron_Edwards_Wordguess
             }
             else
                 txt_misc.Text = "ERROR: IP or Port needed";
-        }   
+        }
 
         private void but_hint_Click(object sender, EventArgs e)
         {
-            if (game != null)
+            if (game != null) //ensure game is active
             {
                 Message response = game.askForHint();
                 if (response.isType("error"))
@@ -89,30 +89,26 @@ namespace Cameron_Edwards_Wordguess
 
         private void but_quit_Click(object sender, EventArgs e)
         {
-            Message msg = new Message();
             if (game != null)
-                msg = game.sendExit();
-            if (msg.isType("error"))
-                txt_misc.Text = "Error";
-            else
-                this.Close();
+                game.sendExit();
+            this.Close();
         }
 
         private string formatHint(string h)
         {
             if (h.Length > 0)
                 return h + "   (" + h.Length + " letters)";
-            return "";
+            return string.Empty;
         }
 
         private void clearTextBoxes()
         {
             txt_score.BackColor = Color.Tan;
-            txt_score.Text = "";
-            txt_guess.Text = "";
-            txt_misc.Text = "";
-            txt_hint.Text = "";
-            txt_def.Text = "";
+            txt_score.Text = string.Empty;
+            txt_guess.Text = string.Empty;
+            txt_misc.Text = string.Empty;
+            txt_hint.Text = string.Empty;
+            txt_def.Text = string.Empty;
         }
     }
 }
